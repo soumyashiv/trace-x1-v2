@@ -1,0 +1,32 @@
+{
+  "name": "trace-x-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "reactflow": "11.11.4",
+    "recharts": "2.12.7",
+    "axios": "1.7.7",
+    "date-fns": "3.6.0"
+  },
+  "devDependencies": {
+    "typescript": "5.5.4",
+    "@types/react": "18.3.5",
+    "@types/react-dom": "18.3.0",
+    "@types/node": "20.14.15",
+    "tailwindcss": "3.4.10",
+    "postcss": "8.4.41",
+    "autoprefixer": "10.4.20",
+    "vitest": "2.0.5",
+    "@testing-library/react": "16.0.1"
+  }
+}

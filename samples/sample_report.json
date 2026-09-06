@@ -1,0 +1,115 @@
+{
+  "case": {
+    "case_id": "case-demo-001",
+    "title": "Reported crypto investment scam",
+    "investigator": "demo.investigator",
+    "status": "open",
+    "created_at": "2026-08-20T10:00:00"
+  },
+  "suspect_wallet": "0xVICTIM0000000000000000000000000000A1",
+  "transaction_summary": {
+    "total_transactions": 96,
+    "total_value_out": 16010.64,
+    "distinct_addresses_involved": 12
+  },
+  "fund_flow_paths": [
+    [
+      "0xVICTIM0000000000000000000000000000A1",
+      "0xBURNER_0000A1",
+      "0xINTER1_0000A1",
+      "0xINTER3_0000A1",
+      "0xEXCHANGE_KRAKENISH_HOT1"
+    ],
+    [
+      "0xVICTIM0000000000000000000000000000A1",
+      "0xBURNER_0000A1",
+      "0xINTER1_0000A1",
+      "0xINTER3_0000A1",
+      "0xEXCHANGE_KRAKENISH_HOT1"
+    ],
+    [
+      "0xVICTIM0000000000000000000000000000A1",
+      "0xBURNER_0000A1",
+      "0xINTER1_0000A1",
+      "0xINTER3_0000A1",
+      "0xEXCHANGE_KRAKENISH_HOT1"
+    ],
+    [
+      "0xVICTIM0000000000000000000000000000A1",
+      "0xBURNER_0000A1",
+      "0xINTER1_0000A1",
+      "0xINTER3_0000A1",
+      "0xEXCHANGE_KRAKENISH_HOT1"
+    ],
+    [
+      "0xVICTIM0000000000000000000000000000A1",
+      "0xBURNER_0000A1",
+      "0xINTER1_0000A1",
+      "0xINTER3_0000A1",
+      "0xEXCHANGE_KRAKENISH_HOT1"
+    ]
+  ],
+  "risk_score": {
+    "address": "0xVICTIM0000000000000000000000000000A1",
+    "risk_score": 23.84,
+    "risk_level": "low",
+    "feature_contributions": {
+      "burstiness": 0.07,
+      "hop_evasion": 0.0,
+      "fan_out": 7.8,
+      "fan_in": 0.0,
+      "velocity": 0.0,
+      "value_concentration": 9.97,
+      "counterparty_diversity": 3.5,
+      "known_risk_label": 0.0,
+      "cluster_proximity": 2.5,
+      "routing_irregularity": 0.0
+    },
+    "raw_features": {
+      "burstiness": 0.0046,
+      "fan_out": 0.6,
+      "fan_in": 0.0,
+      "counterparty_diversity": 0.5,
+      "hop_evasion": 0.0,
+      "velocity": 0.0,
+      "value_concentration": 0.9974,
+      "known_risk_label": 0.0,
+      "cluster_proximity": 0.25,
+      "routing_irregularity": 0.0
+    },
+    "evidence": [
+      "No strong individual signal fired; score reflects a weighted combination of weak structural indicators only."
+    ],
+    "confidence": 0.3
+  },
+  "likely_vasp_attributions": [
+    {
+      "target_address": "0xEXCHANGE_KRAKENISH_HOT1",
+      "likely_entity": "Krakenish Exchange (mock)",
+      "confidence": 0.58,
+      "supporting_evidence": [
+        "Direct on-chain path found: 0xVICTIM0000000000000000000000000000A1 -> 0xBURNER_0000A1 -> 0xINTER2_0000A1 -> 0xEXCHANGE_KRAKENISH_HOT1 (3 hop(s))",
+        "Address tagged by mock_vasp_registry_v1 as a Krakenish hot wallet",
+        "Receives from >500 distinct counterparties (deposit-hub pattern)",
+        "Entity label confidence from mock_vasp_registry_v1: 0.90"
+      ],
+      "contradicting_evidence": [],
+      "last_verified": "2026-08-01T00:00:00",
+      "source": "mock_vasp_registry_v1",
+      "disclaimer": "This is an evidence-based hypothesis, not a confirmed identification. Confidence decays with hop distance and with any funds routed through unresolved mixers/bridges."
+    }
+  ],
+  "evidence": [
+    "No strong individual signal fired; score reflects a weighted combination of weak structural indicators only."
+  ],
+  "recommendations": [
+    "Issue a preservation/production request to Krakenish Exchange (mock) for KYC records on the receiving deposit address (attribution confidence 58%).",
+    "Flag intermediary wallet(s) 0xBURNER_0000A1, 0xPEER_0000A1, 0xINTER1_0000A1, 0xINTER2_0000A1, 0xINTER3_0000A1, 0xEXCHANGE_KRAKENISH_HOT1, 0xBURNER_H_HOT1, 0xPEER_H_HOT1, 0xINTER1_H_HOT1, 0xINTER2_H_HOT1, 0xINTER3_H_HOT1 for cross-case correlation \u2014 reused laundering infrastructure often recurs across victims."
+  ],
+  "limitations": [
+    "This attribution is a data-driven hypothesis, not a confirmed identification, and is not admissible as sole evidence.",
+    "Fund tracing cannot be guaranteed complete through unresolved mixers, cross-chain bridges, or privacy-preserving protocols.",
+    "No live connection to NCRP/SAHYOG was used; integration adapters are mocked pending credentialed government API access."
+  ],
+  "generated_at": "2026-09-05T20:28:32.345475+00:00"
+}
